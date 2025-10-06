@@ -20,15 +20,16 @@ public class AccountApiController {
     private final AccountRepository accountRepository;
 
     @GetMapping("/me")
-    public Api<Object> me() {
+    public Api<AccountMeResponse> me() {
         var response = AccountMeResponse.builder()
                 .name("홍길동")
                 .email("homg@gmail.com")
                 .registeredAt(LocalDateTime.now())
                 .build();
 
+        var str = "안녕하세요";
+        var age = Integer.parseInt(str);
 
-
-        return Api.ERROR(UserErrorCode.USER_NOT_FOUND);
+        return Api.OK(response);
     }
 }
