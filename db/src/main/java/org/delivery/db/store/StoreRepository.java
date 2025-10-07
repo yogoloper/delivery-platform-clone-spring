@@ -1,0 +1,19 @@
+package org.delivery.db.store;
+
+import org.delivery.db.store.enums.StoreCategory;
+import org.delivery.db.store.enums.StoreStatus;
+import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.Optional;
+
+public interface StoreRepository extends JpaRepository<StoreEntity, Long> {
+
+    // 유효한 스토어
+    Optional<StoreEntity> findFirstByIdAndStatusOrderByIdDesc(Long id, StoreStatus status);
+
+    // 유요한 스토어 리스트
+    Optional<StoreEntity> findByStatusOrderByIdDesc(StoreStatus status);
+
+    // 유요한 특정 카테고리의 스토어 리스트
+    Optional<StoreEntity> findByStatusAndCategoryOrderByStarDesc(StoreStatus status, StoreCategory category);
+}
