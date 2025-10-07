@@ -79,7 +79,7 @@ public class JwtTokenHelper implements TokenHelperIfs {
                 .build();
 
         try {
-            var result = parser.parseClaimsJwt(token);
+            var result = parser.parseClaimsJws(token);
             return new HashMap<String, Object>(result.getBody());
 
         } catch (Exception e) {
@@ -91,7 +91,7 @@ public class JwtTokenHelper implements TokenHelperIfs {
                 throw new ApiException(TokenErrorCode.EXPIRED_TOKEN, e);
             } else {
                 // 그외 에러
-                throw new ApiException(TokenErrorCode.EXPIRED_TOKEN, e);
+                throw new ApiException(TokenErrorCode.TOKEN_EXCEPTOIN, e);
             }
         }
     }

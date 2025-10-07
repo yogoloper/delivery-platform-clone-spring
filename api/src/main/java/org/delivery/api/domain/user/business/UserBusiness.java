@@ -2,18 +2,13 @@ package org.delivery.api.domain.user.business;
 
 import lombok.RequiredArgsConstructor;
 import org.delivery.api.common.annotation.Business;
-import org.delivery.api.common.error.ErrorCode;
-import org.delivery.api.common.exception.ApiException;
-import org.delivery.api.domain.token.controller.business.TokenBusiness;
+import org.delivery.api.domain.token.business.TokenBusiness;
 import org.delivery.api.domain.token.controller.model.TokenResponse;
 import org.delivery.api.domain.user.controller.model.UserLoginRequest;
 import org.delivery.api.domain.user.controller.model.UserRegisterRequest;
 import org.delivery.api.domain.user.controller.model.UserResponse;
 import org.delivery.api.domain.user.converter.UserConverter;
 import org.delivery.api.domain.user.service.UserService;
-import org.delivery.db.user.UserEntity;
-
-import java.util.Optional;
 
 @RequiredArgsConstructor
 @Business
@@ -59,4 +54,9 @@ public class UserBusiness {
         return tokenResponse;
     }
 
+    public UserResponse me(Long userId) {
+        var userEntity = userService.getUserWithThrow(userId);
+        var response = userConverter.toResponse(userEntity);
+        return response;
+    }
 }

@@ -1,4 +1,4 @@
-package org.delivery.api.domain.token.controller.business;
+package org.delivery.api.domain.token.business;
 
 import lombok.RequiredArgsConstructor;
 import org.delivery.api.common.annotation.Business;
@@ -34,5 +34,10 @@ public class TokenBusiness {
                     return tokenConverter.toResponse(accessToken, refreshToekn);
                 })
                 .orElseThrow(() -> new ApiException(ErrorCode.NULL_POINT));
+    }
+
+    public Long validationAccessToken(String accessToken) {
+        var userId = tokenService.validationToken(accessToken);
+        return userId;
     }
 }
