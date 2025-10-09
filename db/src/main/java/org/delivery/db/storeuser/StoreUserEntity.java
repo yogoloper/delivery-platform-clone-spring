@@ -5,6 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.experimental.SuperBuilder;
 import org.delivery.db.BaseEntity;
 import org.delivery.db.storeuser.enums.StoreUserRole;
 import org.delivery.db.storeuser.enums.StoreUserStatus;
@@ -15,6 +16,7 @@ import java.time.LocalDateTime;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
+@SuperBuilder
 @Entity
 @Table(name = "store_user")
 public class StoreUserEntity extends BaseEntity {
