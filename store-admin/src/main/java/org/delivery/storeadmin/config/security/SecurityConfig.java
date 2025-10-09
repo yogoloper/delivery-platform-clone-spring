@@ -19,7 +19,7 @@ public class SecurityConfig {
     private List<String> SWAGGER = List.of(
             "/swagger-ui.html",
             "/swagger-ui/**",
-            "/v2/api-docs/**"
+            "/v3/api-docs/**"
     );
 
     @Bean
