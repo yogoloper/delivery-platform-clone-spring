@@ -17,7 +17,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/api/user-order")
-public class UserOrderAPiController {
+public class UserOrderApiController {
 
     private final UserOrderBusiness userOrderBusiness;
 
