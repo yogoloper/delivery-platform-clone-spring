@@ -17,6 +17,8 @@ public class UserOrderResponse {
 
     private Long id;
 
+    private Long userId;
+
     private Long storeId;
 
     private UserOrderStatus status;

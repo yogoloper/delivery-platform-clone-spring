@@ -8,7 +8,7 @@ import org.springframework.stereotype.Service;
 public class UserOrderConverter {
 
     public UserOrderResponse toResponse(UserOrderEntity entity) {
-        return UserOrderEntity.builder()
+        return UserOrderResponse.builder()
                 .id(entity.getId())
                 .userId(entity.getUserId())
                 .storeId(entity.getStoreId())
