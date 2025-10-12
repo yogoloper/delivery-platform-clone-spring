@@ -15,8 +15,6 @@ import org.delivery.api.domain.userorder.producer.UserOrderProducer;
 import org.delivery.api.domain.userorder.service.UserOrderService;
 import org.delivery.api.domain.userordermenu.converter.UserOrderMenuConverter;
 import org.delivery.api.domain.userordermenu.service.UserOrderMenuService;
-import org.delivery.db.store.StoreEntity;
-import org.delivery.db.userorder.UserOrderEntity;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -48,17 +46,17 @@ public class UserOrderBusiness {
     // 3. userOrderMenu 생성
     // 4. 응답 생성
     public UserOrderResponse userOrder(User user, UserOrderRequest body) {
-        var storeMenyEntityList = body.getStoreMenuIdList().stream()
+        var storeMenuEntityList = body.getStoreMenuIdList().stream()
                 .map(it -> storeMenuService.getStoreMenuWithThrow(it))
                 .collect(Collectors.toList());
 
-        var userOrderEntity = userOrderConverter.toEntity(user, storeMenyEntityList);
+        var userOrderEntity = userOrderConverter.toEntity(user, storeMenuEntityList);
 
         // 주문
         var newUserOrderEntity = userOrderService.order(userOrderEntity);
 
         // 매핑
-        var userOrderMenuEntityList = storeMenyEntityList.stream()
+        var userOrderMenuEntityList = storeMenuEntityList.stream()
                 .map(it -> {
                    var userOrderMenuEntity = userOrderMenuConverter.toEntity(
                            newUserOrderEntity,
