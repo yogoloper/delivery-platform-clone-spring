@@ -8,7 +8,23 @@
     <h1>Main Page</h1>
 
 <!--    <h1 th:text="${#authentication.name}"></h1> </br>-->
-    <p th:text="${#authentication != null ? #authentication.name : 'Guest'}"></p>
+<!--    <p th:text="${#authentication != null ? #authentication.name : 'Guest'}"></p>-->
+
+
 
 </body>
+
+<script>
+    const url = "http://localhost:8081/api/sse/connect" // 접속 주소
+    const eventSource = new EventSource(url); // sse 연결
+
+    eventSource.onopen = event => {
+        console.log("sse connection");
+    }
+
+    eventSource.onmessage = event => {
+        console.log("receive data: " + event.data);
+    }
+
+</script>
 </html>
