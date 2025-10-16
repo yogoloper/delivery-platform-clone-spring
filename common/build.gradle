@@ -2,10 +2,11 @@ plugins {
     id 'java'
     id 'org.springframework.boot'
     id 'io.spring.dependency-management'
+    id 'org.jetbrains.kotlin.jvm'
 }
 
 group = 'org.delivery'
-version = ''
+version = '0.0.1-SNAPSHOT'
 
 java {
     toolchain {
@@ -26,6 +27,12 @@ repositories {
 dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
+}
+
+kotlin {
+    compilerOptions {
+        freeCompilerArgs.addAll '-Xjsr305=strict'
+    }
 }
 
 test {

@@ -1,6 +1,7 @@
 package org.delivery.api.common.exception;
 
-import org.delivery.api.common.error.ErrorCodeIfs;
+
+import org.delibery.common.error.ErrorCodeIfs;
 
 public interface ApiExceptionIfs {
 
