@@ -23,150 +23,150 @@ import org.delivery.db.userordermenu.enums.UserOrderMenuStatus;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@Slf4j
-@RequiredArgsConstructor
-@Business
-public class UserOrderBusiness {
-
-    private final UserOrderService userOrderService;
-
-    private final UserOrderConverter userOrderConverter;
-
-    private final StoreMenuService storeMenuService;
-
-    private final UserOrderMenuConverter userOrderMenuConverter;
-
-    private final UserOrderMenuService userOrderMenuService;
-
-    private final StoreService storeService;
-
-    private final StoreMenuConverter storeMenuConverter;
-
-    private final StoreConverter storeConverter;
-
-    private final UserOrderProducer userOrderProducer;
-
-    private final ObjectMapper objectMapper;
-
-    // 1. 사용자, 메뉴 id
-    // 2. userOrder 생성
-    // 3. userOrderMenu 생성
-    // 4. 응답 생성
-    public UserOrderResponse userOrder(User user, UserOrderRequest body) {
-
-        var storeEntity = storeService.getStoreWithThrow(body.getStoreId());
-
-        var storeMenuEntityList = body.getStoreMenuIdList().stream()
-                .map(it -> storeMenuService.getStoreMenuWithThrow(it))
-                .collect(Collectors.toList());
-
-        var userOrderEntity = userOrderConverter.toEntity(user, storeEntity, storeMenuEntityList);
-
-        // 주문
-        var newUserOrderEntity = userOrderService.order(userOrderEntity);
-
-        // 매핑
-        var userOrderMenuEntityList = storeMenuEntityList.stream()
-                .map(it -> {
-                   var userOrderMenuEntity = userOrderMenuConverter.toEntity(
-                           newUserOrderEntity,
-                           it
-                   );
-                   return userOrderMenuEntity;
-                })
-                .collect(Collectors.toList());
-
-        userOrderMenuEntityList.forEach( it -> {
-            userOrderMenuService.order(it);
-        });
-
-        // 비동기로 가맹점에 주문 알리기
-        userOrderProducer.sendOrder(newUserOrderEntity);
-
-        return userOrderConverter.toResponse(userOrderEntity);
-    }
-
-    public List<UserOrderDetailResponse> current(User user) {
-        var userOrderEntityList = userOrderService.current(user.getId());
-
-        var userOrderDetailResponseList = userOrderEntityList.stream()
-                .map(userOrderEntity -> {
-
-                    // 사용자가 주문한 메뉴
-//                    var userOrderMenuEntityList = userOrderMenuService.getUserOrderMenu(it.getId());
-                    var userOrderMenuEntityList = userOrderEntity.getUserOrderMenuList().stream()
-                            .filter(it -> it.getStatus().equals(UserOrderMenuStatus.REGISTERTED))
-                            .collect(Collectors.toList());
-
-                    var storeMenuEntityList = userOrderMenuEntityList.stream()
-                            .map(userOrderMenuEntity -> {
-                                return userOrderMenuEntity.getStoreMenu();
-                            })
-                            .collect(Collectors.toList());
-
-                    // 사용자가 주문한 스토어
-//                    var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().get().getStore().getId());
-                    var storeEntity = userOrderEntity.getStore();
-
-                    return UserOrderDetailResponse.builder()
-                            .userOrderResponse(userOrderConverter.toResponse(userOrderEntity))
-                            .storeMenuResponseList(storeMenuConverter.toResponse(storeMenuEntityList))
-                            .storeResponse(storeConverter.toResponse(storeEntity))
-                            .build();
-                })
-                .collect(Collectors.toList());
-
-        return userOrderDetailResponseList;
-    }
-
-    public List<UserOrderDetailResponse> history(User user) {
-        var userOrderEntityList = userOrderService.history(user.getId());
-
-        var userOrderDetailResponseList = userOrderEntityList.stream()
-                .map(userOrderEntity -> {
-
-                    // 사용자가 주문한 메뉴
-                    var userOrderMenuEntityList = userOrderEntity.getUserOrderMenuList().stream()
-                            .filter(it -> it.getStatus().equals(UserOrderMenuStatus.REGISTERTED))
-                            .collect(Collectors.toList());
-
-                    var storeMenuEntityList = userOrderMenuEntityList.stream()
-                            .map(userOrderMenuEntity -> userOrderMenuEntity.getStoreMenu())
-                            .collect(Collectors.toList());
-
-                    // 사용자가 주문한 스토어
-                    var storeEntity = userOrderEntity.getStore();
-
-                    return UserOrderDetailResponse.builder()
-                            .userOrderResponse(userOrderConverter.toResponse(userOrderEntity))
-                            .storeMenuResponseList(storeMenuConverter.toResponse(storeMenuEntityList))
-                            .storeResponse(storeConverter.toResponse(storeEntity))
-                            .build();
-                })
-                .collect(Collectors.toList());
-
-        return userOrderDetailResponseList;
-    }
-
-    public UserOrderDetailResponse read(User user, Long orderId) {
-        var userOrderEntity = userOrderService.getUserOrderWithoutStatusWithThrow(orderId, user.getId());
-
-        // 사용자가 주문한 메뉴
-        var userOrderMenuEntityList = userOrderEntity.getUserOrderMenuList().stream()
-                .filter(it -> it.getStatus().equals(UserOrderMenuStatus.REGISTERTED))
-                .collect(Collectors.toList());
-
-        var storeMenuEntityList = userOrderMenuEntityList.stream()
-                .map(userOrderMenuEntity -> userOrderMenuEntity.getStoreMenu())
-                .collect(Collectors.toList());
-
-        // 사용자가 주문한 스토어
-        var storeEntity = userOrderEntity.getStore();
-
-        return UserOrderDetailResponse.builder()
-                .userOrderResponse(userOrderConverter.toResponse(userOrderEntity))
-                .storeMenuResponseList(storeMenuConverter.toResponse(storeMenuEntityList))
-                .storeResponse(storeConverter.toResponse(storeEntity))
-                .build();
-    }
-}
+//@Slf4j
+//@RequiredArgsConstructor
+//@Business
+//public class UserOrderBusiness {
+//
+//    private final UserOrderService userOrderService;
+//
+//    private final UserOrderConverter userOrderConverter;
+//
+//    private final StoreMenuService storeMenuService;
+//
+//    private final UserOrderMenuConverter userOrderMenuConverter;
+//
+//    private final UserOrderMenuService userOrderMenuService;
+//
+//    private final StoreService storeService;
+//
+//    private final StoreMenuConverter storeMenuConverter;
+//
+//    private final StoreConverter storeConverter;
+//
+//    private final UserOrderProducer userOrderProducer;
+//
+//    private final ObjectMapper objectMapper;
+//
+//    // 1. 사용자, 메뉴 id
+//    // 2. userOrder 생성
+//    // 3. userOrderMenu 생성
+//    // 4. 응답 생성
+//    public UserOrderResponse userOrder(User user, UserOrderRequest body) {
+//
+//        var storeEntity = storeService.getStoreWithThrow(body.getStoreId());
+//
+//        var storeMenuEntityList = body.getStoreMenuIdList().stream()
+//                .map(it -> storeMenuService.getStoreMenuWithThrow(it))
+//                .collect(Collectors.toList());
+//
+//        var userOrderEntity = userOrderConverter.toEntity(user, storeEntity, storeMenuEntityList);
+//
+//        // 주문
+//        var newUserOrderEntity = userOrderService.order(userOrderEntity);
+//
+//        // 매핑
+//        var userOrderMenuEntityList = storeMenuEntityList.stream()
+//                .map(it -> {
+//                   var userOrderMenuEntity = userOrderMenuConverter.toEntity(
+//                           newUserOrderEntity,
+//                           it
+//                   );
+//                   return userOrderMenuEntity;
+//                })
+//                .collect(Collectors.toList());
+//
+//        userOrderMenuEntityList.forEach( it -> {
+//            userOrderMenuService.order(it);
+//        });
+//
+//        // 비동기로 가맹점에 주문 알리기
+//        userOrderProducer.sendOrder(newUserOrderEntity);
+//
+//        return userOrderConverter.toResponse(userOrderEntity);
+//    }
+//
+//    public List<UserOrderDetailResponse> current(User user) {
+//        var userOrderEntityList = userOrderService.current(user.getId());
+//
+//        var userOrderDetailResponseList = userOrderEntityList.stream()
+//                .map(userOrderEntity -> {
+//
+//                    // 사용자가 주문한 메뉴
+////                    var userOrderMenuEntityList = userOrderMenuService.getUserOrderMenu(it.getId());
+//                    var userOrderMenuEntityList = userOrderEntity.getUserOrderMenuList().stream()
+//                            .filter(it -> it.getStatus().equals(UserOrderMenuStatus.REGISTERTED))
+//                            .collect(Collectors.toList());
+//
+//                    var storeMenuEntityList = userOrderMenuEntityList.stream()
+//                            .map(userOrderMenuEntity -> {
+//                                return userOrderMenuEntity.getStoreMenu();
+//                            })
+//                            .collect(Collectors.toList());
+//
+//                    // 사용자가 주문한 스토어
+////                    var storeEntity = storeService.getStoreWithThrow(storeMenuEntityList.stream().findFirst().get().getStore().getId());
+//                    var storeEntity = userOrderEntity.getStore();
+//
+//                    return UserOrderDetailResponse.builder()
+//                            .userOrderResponse(userOrderConverter.toResponse(userOrderEntity))
+//                            .storeMenuResponseList(storeMenuConverter.toResponse(storeMenuEntityList))
+//                            .storeResponse(storeConverter.toResponse(storeEntity))
+//                            .build();
+//                })
+//                .collect(Collectors.toList());
+//
+//        return userOrderDetailResponseList;
+//    }
+//
+//    public List<UserOrderDetailResponse> history(User user) {
+//        var userOrderEntityList = userOrderService.history(user.getId());
+//
+//        var userOrderDetailResponseList = userOrderEntityList.stream()
+//                .map(userOrderEntity -> {
+//
+//                    // 사용자가 주문한 메뉴
+//                    var userOrderMenuEntityList = userOrderEntity.getUserOrderMenuList().stream()
+//                            .filter(it -> it.getStatus().equals(UserOrderMenuStatus.REGISTERTED))
+//                            .collect(Collectors.toList());
+//
+//                    var storeMenuEntityList = userOrderMenuEntityList.stream()
+//                            .map(userOrderMenuEntity -> userOrderMenuEntity.getStoreMenu())
+//                            .collect(Collectors.toList());
+//
+//                    // 사용자가 주문한 스토어
+//                    var storeEntity = userOrderEntity.getStore();
+//
+//                    return UserOrderDetailResponse.builder()
+//                            .userOrderResponse(userOrderConverter.toResponse(userOrderEntity))
+//                            .storeMenuResponseList(storeMenuConverter.toResponse(storeMenuEntityList))
+//                            .storeResponse(storeConverter.toResponse(storeEntity))
+//                            .build();
+//                })
+//                .collect(Collectors.toList());
+//
+//        return userOrderDetailResponseList;
+//    }
+//
+//    public UserOrderDetailResponse read(User user, Long orderId) {
+//        var userOrderEntity = userOrderService.getUserOrderWithoutStatusWithThrow(orderId, user.getId());
+//
+//        // 사용자가 주문한 메뉴
+//        var userOrderMenuEntityList = userOrderEntity.getUserOrderMenuList().stream()
+//                .filter(it -> it.getStatus().equals(UserOrderMenuStatus.REGISTERTED))
+//                .collect(Collectors.toList());
+//
+//        var storeMenuEntityList = userOrderMenuEntityList.stream()
+//                .map(userOrderMenuEntity -> userOrderMenuEntity.getStoreMenu())
+//                .collect(Collectors.toList());
+//
+//        // 사용자가 주문한 스토어
+//        var storeEntity = userOrderEntity.getStore();
+//
+//        return UserOrderDetailResponse.builder()
+//                .userOrderResponse(userOrderConverter.toResponse(userOrderEntity))
+//                .storeMenuResponseList(storeMenuConverter.toResponse(storeMenuEntityList))
+//                .storeResponse(storeConverter.toResponse(storeEntity))
+//                .build();
+//    }
+//}

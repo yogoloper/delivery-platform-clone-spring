@@ -9,15 +9,15 @@ import org.delivery.api.domain.storemenu.controller.model.StoreMenuResponse;
 
 import java.util.List;
 
-@Data
-@NoArgsConstructor
-@AllArgsConstructor
-@Builder
-public class UserOrderDetailResponse {
-
-    private UserOrderResponse userOrderResponse;
-
-    private StoreResponse storeResponse;
-
-    private List<StoreMenuResponse> storeMenuResponseList;
-}
+//@Data
+//@NoArgsConstructor
+//@AllArgsConstructor
+//@Builder
+//public class UserOrderDetailResponse {
+//
+//    private UserOrderResponse userOrderResponse;
+//
+//    private StoreResponse storeResponse;
+//
+//    private List<StoreMenuResponse> storeMenuResponseList;
+//}
