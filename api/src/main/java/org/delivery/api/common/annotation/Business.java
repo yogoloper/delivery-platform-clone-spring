@@ -8,11 +8,11 @@ import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 import java.lang.annotation.Target;
 
-@Target(ElementType.TYPE)
-@Retention(RetentionPolicy.RUNTIME)
-@Service
-public @interface Business {
-
-    @AliasFor(annotation = Service.class)
-    String value() default "";
-}
+//@Target(ElementType.TYPE)
+//@Retention(RetentionPolicy.RUNTIME)
+//@Service
+//public @interface Business {
+//
+//    @AliasFor(annotation = Service.class)
+//    String value() default "";
+//}

@@ -2,7 +2,7 @@ package org.delivery.api.domain.store.controller;
 
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
-import org.delivery.api.common.api.Api;
+import org.delivery.common.api.Api;
 import org.delivery.api.domain.store.business.StoreBusiness;
 import org.delivery.api.domain.store.controller.model.StoreRegisterRequest;
 import org.delivery.api.domain.store.controller.model.StoreResponse;
@@ -24,6 +24,7 @@ public class StoreOpenApiController {
             @RequestBody Api<StoreRegisterRequest> request
     ) {
         var response = storeBusiness.register(request.getBody());
+
         return Api.OK(response);
     }
 }

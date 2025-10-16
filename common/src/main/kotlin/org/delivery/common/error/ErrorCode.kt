@@ -1,4 +1,4 @@
-package org.delibery.common.error
+package org.delivery.common.error
 
 enum class ErrorCode(
     private val httpStatusCode: Int,

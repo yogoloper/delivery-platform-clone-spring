@@ -1,4 +1,4 @@
-package org.delibery.common.error
+package org.delivery.common.error
 
 enum class TokenErrorCode(
     private val httpStatusCode: Int,
