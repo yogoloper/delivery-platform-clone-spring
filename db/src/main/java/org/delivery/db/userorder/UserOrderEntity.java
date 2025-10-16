@@ -1,9 +1,11 @@
 package org.delivery.db.userorder;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lombok.Data;
 import lombok.EqualsAndHashCode;
 import lombok.NoArgsConstructor;
+import lombok.ToString;
 import lombok.experimental.SuperBuilder;
 import org.delivery.db.BaseEntity;
 import org.delivery.db.store.StoreEntity;
@@ -49,5 +51,7 @@ public class UserOrderEntity extends BaseEntity {
     private LocalDateTime receivedAt;
 
     @OneToMany(mappedBy = "userOrder")
+    @ToString.Exclude
+    @JsonIgnore
     private List<UserOrderMenuEntity> userOrderMenuList;
 }
