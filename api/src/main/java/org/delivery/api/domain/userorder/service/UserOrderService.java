@@ -21,7 +21,7 @@ public class UserOrderService {
             Long id,
             Long userId
     ) {
-        return userOrderRepository.findFirstByIdAndUserId(id, userId)
+        return Optional.ofNullable(userOrderRepository.findFirstByIdAndUserId(id, userId))
                 .orElseThrow(() -> new ApiException(ErrorCode.NULL_POINT));
     }
 
@@ -29,7 +29,7 @@ public class UserOrderService {
             Long id,
             Long userId
     ){
-        return userOrderRepository.findFirstByIdAndStatusAndUserId(id, UserOrderStatus.REGISTERED, userId)
+        return Optional.ofNullable(userOrderRepository.findFirstByIdAndStatusAndUserId(id, UserOrderStatus.REGISTERED, userId))
                 .orElseThrow(() -> new ApiException(ErrorCode.NULL_POINT));
     }
 
