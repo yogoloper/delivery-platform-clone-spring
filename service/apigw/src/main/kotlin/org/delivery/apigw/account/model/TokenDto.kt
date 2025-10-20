@@ -1,11 +1,11 @@
-package com.delivery.apigw.account.model
+package org.delivery.apigw.account.model
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming
+import java.time.LocalDateTime
 
 @JsonNaming(value = PropertyNamingStrategies.SnakeCaseStrategy::class)
-data class TokenValidationResponse(
-    var userId: Long?=null,
-) {
-
-}
+data class TokenDto(
+    var token: String?=null,
+    var exprireAt: LocalDateTime?=null
+)

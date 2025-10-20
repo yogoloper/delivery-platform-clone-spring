@@ -1,4 +1,4 @@
-package com.delivery.apigw.account.model
+package org.delivery.apigw.account.model
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategies
 import com.fasterxml.jackson.databind.annotation.JsonNaming

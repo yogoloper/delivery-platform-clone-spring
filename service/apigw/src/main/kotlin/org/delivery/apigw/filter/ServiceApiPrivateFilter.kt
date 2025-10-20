@@ -1,8 +1,8 @@
 package org.delivery.apigw.filter
 
-import com.delivery.apigw.account.model.TokenDto
-import com.delivery.apigw.account.model.TokenValidationRequest
-import com.delivery.apigw.account.model.TokenValidationResponse
+import org.delivery.apigw.account.model.TokenDto
+import org.delivery.apigw.account.model.TokenValidationRequest
+import org.delivery.apigw.account.model.TokenValidationResponse
 import org.delivery.apigw.common.Log
 import org.delivery.common.error.TokenErrorCode
 import org.springframework.cloud.gateway.filter.GatewayFilter
@@ -10,7 +10,6 @@ import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFac
 import org.springframework.stereotype.Component
 import org.delivery.common.exception.ApiException
 import org.springframework.core.ParameterizedTypeReference
-import org.springframework.http.HttpStatus
 import org.springframework.http.HttpStatusCode
 import org.springframework.http.MediaType
 import org.springframework.web.reactive.function.client.ClientResponse
@@ -85,12 +84,22 @@ class ServiceApiPrivateFilter : AbstractGatewayFilterFactory<ServiceApiPrivateFi
                     log.info("response: {}", response)
 
                     // 3. 사용자 정보 추가
+                    val userId = response.userId?.toString()
+
+                    val proxyRequest = exchange.request.mutate()
+                        .header("x-user-id", userId)
+                        .build()
+
+                    val requestBuild = exchange.mutate().request(proxyRequest).build()
 
 
-                    val mono = chain.filter(exchange)
+                    val mono = chain.filter(requestBuild)
                     mono
                 }
-
+                .onErrorMap { e ->
+                    log.error("", e)
+                    e
+                }
         }
     }
 }

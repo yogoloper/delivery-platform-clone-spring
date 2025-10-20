@@ -38,21 +38,14 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
             return true;
         }
 
-        // TODO header 검증
-        var accessToken = request.getHeader("authorization-token");
+        var userId = request.getHeader("x-user-id");
         if (accessToken == null) {
-            throw new ApiException(TokenErrorCode.AUTHORIZATION_TOKEN_NOT_FOUND);
+            throw new ApiException(ErrorCode.BAD_REQUEST, "x-user-id header 없음");
         }
 
-        var userId = tokenBusiness.validationAccessToken(accessToken);
+        var requestContext = Objects.requireNonNull(RequestContextHolder.getRequestAttributes());
+        requestContext.setAttribute("userId", userId, RequestAttributes.SCOPE_REQUEST);
 
-        if (userId != null) {
-            var requestContext = Objects.requireNonNull(RequestContextHolder.getRequestAttributes());
-            requestContext.setAttribute("userId", userId, RequestAttributes.SCOPE_REQUEST);
-
-            return true;
-        }
-
-        throw new ApiException(ErrorCode.BAD_REQUEST, "인증 실패");
+        return true;
     }
 }
