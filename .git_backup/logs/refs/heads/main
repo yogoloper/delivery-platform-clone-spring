@@ -1,0 +1,69 @@
+0000000000000000000000000000000000000000 540646692a1143f4c60b2d073baf2ebcf139a71b yogoloper <jguddnjs@gmail.com> 1759669637 +0900	commit (initial): Init
+540646692a1143f4c60b2d073baf2ebcf139a71b 540646692a1143f4c60b2d073baf2ebcf139a71b yogoloper <jguddnjs@gmail.com> 1759669650 +0900	Branch: renamed refs/heads/master to refs/heads/main
+540646692a1143f4c60b2d073baf2ebcf139a71b da1d532fa33e4d30a3862c96fda11c1ed16f0272 yogoloper <jguddnjs@gmail.com> 1759669768 +0900	commit (merge): Resolve merge conflict in .gitignore
+da1d532fa33e4d30a3862c96fda11c1ed16f0272 1f23995009b3c8f7388a5b5a0951d486c5ff17a1 yogoloper <jguddnjs@gmail.com> 1759671059 +0900	commit: 멀티모듈 설정 1
+1f23995009b3c8f7388a5b5a0951d486c5ff17a1 ba2cdafb1b49c6b57e9132de553772352536be4e yogoloper <jguddnjs@gmail.com> 1759672190 +0900	commit: 멀티모듈 설정 2
+ba2cdafb1b49c6b57e9132de553772352536be4e 787142d64da220e2ffad7cf5c9d41d1aeb475f66 yogoloper <jguddnjs@gmail.com> 1759674883 +0900	commit: 멀티모듈 설정 3 - jar 설정
+787142d64da220e2ffad7cf5c9d41d1aeb475f66 5b478f5a0c65b3e02a63c8e06a2244d23e09e6ac yogoloper <jguddnjs@gmail.com> 1759676153 +0900	commit: 멀티모듈 설정 4 - api 모듈에서 db 모듈의 빈 등록
+5b478f5a0c65b3e02a63c8e06a2244d23e09e6ac 74172d5b541e8b44a61da8e8492032f9928eb731 yogoloper <jguddnjs@gmail.com> 1759677282 +0900	commit: api 기본설정 - object mapper 설정
+74172d5b541e8b44a61da8e8492032f9928eb731 d4394f7c01d6145f2fd6d56192038b53d3e344f2 yogoloper <jguddnjs@gmail.com> 1759678226 +0900	commit: 스웨거 기본 설정
+d4394f7c01d6145f2fd6d56192038b53d3e344f2 deba667896beb8df05e3f301ae1cc1339c4c5a95 yogoloper <jguddnjs@gmail.com> 1759733693 +0900	commit: logger Filter 적용
+deba667896beb8df05e3f301ae1cc1339c4c5a95 0d9c990eb52982d673a4c2d7f2c3681a1edc3536 yogoloper <jguddnjs@gmail.com> 1759735608 +0900	commit: api 공통 spec 작성
+0d9c990eb52982d673a4c2d7f2c3681a1edc3536 cbeca8ce0271a28ca0ce6ad99578b5495324d1d2 yogoloper <jguddnjs@gmail.com> 1759737549 +0900	commit: api error code 적용
+cbeca8ce0271a28ca0ce6ad99578b5495324d1d2 b919b18a24232430f159889cb00e387f4e32fb3c yogoloper <jguddnjs@gmail.com> 1759739650 +0900	commit: global exception hendler 작성
+b919b18a24232430f159889cb00e387f4e32fb3c cbeca8ce0271a28ca0ce6ad99578b5495324d1d2 yogoloper <jguddnjs@gmail.com> 1759741217 +0900	reset: moving to cbeca8ce0271a28ca0ce6ad99578b5495324d1d2
+cbeca8ce0271a28ca0ce6ad99578b5495324d1d2 00e0e534e703899fc57650a1d09c0d948fbbe45f yogoloper <jguddnjs@gmail.com> 1759741236 +0900	commit: global exception handler 작성
+00e0e534e703899fc57650a1d09c0d948fbbe45f 3fa7358dba22e8e66911d78b314855f95939cda8 yogoloper <jguddnjs@gmail.com> 1759741289 +0900	commit: api exception handler 작성
+3fa7358dba22e8e66911d78b314855f95939cda8 6c04eb62ec04f59f46f8fa2b8e6f4d53cb8eab1a yogoloper <jguddnjs@gmail.com> 1759742810 +0900	commit: interceptor 사용자 인증 틀 작성
+6c04eb62ec04f59f46f8fa2b8e6f4d53cb8eab1a 35b8f3ef476e6c97225d317f7d06a485a71a6c41 yogoloper <jguddnjs@gmail.com> 1759763504 +0900	commit: UserEntity 설정
+35b8f3ef476e6c97225d317f7d06a485a71a6c41 8653cba21666d8c761325675eb4beeebec322390 yogoloper <jguddnjs@gmail.com> 1759766145 +0900	commit: 사용자 로직 작성 - 회원 가입
+8653cba21666d8c761325675eb4beeebec322390 347d73378407ecad03410fa86a1a2441f5f45def yogoloper <jguddnjs@gmail.com> 1759767002 +0900	commit: 사용자 로직 작성 - 로그인
+347d73378407ecad03410fa86a1a2441f5f45def 856201db0499981ac29c486c2c57d95ca10cb32a yogoloper <jguddnjs@gmail.com> 1759818732 +0900	commit: 토큰 로직 작성
+856201db0499981ac29c486c2c57d95ca10cb32a d1a035d102aae4f192dd10fb0fca022c7f9873a4 yogoloper <jguddnjs@gmail.com> 1759820856 +0900	commit: 사용자 로직 작성 - 로그인 토큰 발행
+d1a035d102aae4f192dd10fb0fca022c7f9873a4 7a230df8fb663d43cc4b0fcb43089d37301b7cae yogoloper <jguddnjs@gmail.com> 1759823119 +0900	commit: 사용자 로직 작성 - 인증 로직 추가
+7a230df8fb663d43cc4b0fcb43089d37301b7cae 2007857c5bc3eac11223e7cf385335551feaf374 yogoloper <jguddnjs@gmail.com> 1759824484 +0900	commit: 사용자 로직 작성 - 로그인 인증 AOP 설정
+2007857c5bc3eac11223e7cf385335551feaf374 460f2489d2ca7cac8e90334a26a95acd356026a3 yogoloper <jguddnjs@gmail.com> 1759855867 +0900	commit: 스토어 디비 작성
+460f2489d2ca7cac8e90334a26a95acd356026a3 c4dbfe3e97ca4386344766f53593cfcd614fc266 yogoloper <jguddnjs@gmail.com> 1759856997 +0900	commit: 스토어 디비 수정
+c4dbfe3e97ca4386344766f53593cfcd614fc266 37c3d6c77e45c87f9d50697dc2b7c29fe6ed9f2d yogoloper <jguddnjs@gmail.com> 1759859082 +0900	commit: 스토어 로직 작성 - 스토어 등록, 조회
+37c3d6c77e45c87f9d50697dc2b7c29fe6ed9f2d b36c3ab5a9811fd672a55bc81d5dac3bc8f458f9 yogoloper <jguddnjs@gmail.com> 1759861223 +0900	commit: 스토어 메뉴 디비 작성
+b36c3ab5a9811fd672a55bc81d5dac3bc8f458f9 20b8c17f4461d6a3e0f4ac1dafa48f93887e1d6c yogoloper <jguddnjs@gmail.com> 1759863378 +0900	commit: 스토어 메뉴 로직 작성 - 스토어 메뉴 등록, 조회
+20b8c17f4461d6a3e0f4ac1dafa48f93887e1d6c 913b0b45dbbf53b27684dace4a089211264724ca yogoloper <jguddnjs@gmail.com> 1759941135 +0900	commit: 주문 디비 작성
+913b0b45dbbf53b27684dace4a089211264724ca 1e78aa6070d5a4801830c2ffae8b351ec3723e6e yogoloper <jguddnjs@gmail.com> 1759943767 +0900	commit: 주문 로직 작성 - 서비스 로직
+1e78aa6070d5a4801830c2ffae8b351ec3723e6e dafc48fbe7400604e9684f29a8ad033126b40572 yogoloper <jguddnjs@gmail.com> 1759946418 +0900	commit: 주문 로직 작성 - 주문
+dafc48fbe7400604e9684f29a8ad033126b40572 de3b391756c5dd57aacc789c63f286b1739c5dd2 yogoloper <jguddnjs@gmail.com> 1759949202 +0900	commit: 주문 로직 작성 - 주문 내역 조회
+de3b391756c5dd57aacc789c63f286b1739c5dd2 8381bb7a2827b69b8fca070ad2d0632eaf533cc4 yogoloper <jguddnjs@gmail.com> 1760014351 +0900	commit: store-admin 모듈 생성 - spring security
+8381bb7a2827b69b8fca070ad2d0632eaf533cc4 263fff6b75ef0acde4ef5d52630772675fe5f029 yogoloper <jguddnjs@gmail.com> 1760016396 +0900	commit: 스토어 유저 디비 작성
+263fff6b75ef0acde4ef5d52630772675fe5f029 8381bb7a2827b69b8fca070ad2d0632eaf533cc4 yogoloper <jguddnjs@gmail.com> 1760021618 +0900	reset: moving to 8381bb7a2827b69b8fca070ad2d0632eaf533cc4
+8381bb7a2827b69b8fca070ad2d0632eaf533cc4 2055581b7f2a8a6ac6e405f93fb742c40c53743d yogoloper <jguddnjs@gmail.com> 1760021647 +0900	commit: 스토어 유저 디비 작성
+2055581b7f2a8a6ac6e405f93fb742c40c53743d 8381bb7a2827b69b8fca070ad2d0632eaf533cc4 yogoloper <jguddnjs@gmail.com> 1760022225 +0900	reset: moving to 8381bb7a2827b69b8fca070ad2d0632eaf533cc4
+8381bb7a2827b69b8fca070ad2d0632eaf533cc4 56f031399f7727408ea82eb3ade971ce9f7437e7 yogoloper <jguddnjs@gmail.com> 1760022242 +0900	commit: 가맹점 유저 디비 작성
+56f031399f7727408ea82eb3ade971ce9f7437e7 3984e5283c00c1e163ecaec98b785d6854889042 yogoloper <jguddnjs@gmail.com> 1760024830 +0900	commit: 디비 buider 누락부분 추가
+3984e5283c00c1e163ecaec98b785d6854889042 d229629bba57f8509da0fdcc20dfa1c991fdc07e yogoloper <jguddnjs@gmail.com> 1760025032 +0900	commit: 가맹점 유저 로직 작성 - 회원 가입
+d229629bba57f8509da0fdcc20dfa1c991fdc07e 5b8deaef1b2aee9feadb27bbfa55c0a21e6dabd7 yogoloper <jguddnjs@gmail.com> 1760025780 +0900	commit: 가맹점 유저 swagger 설정 오타 수정
+5b8deaef1b2aee9feadb27bbfa55c0a21e6dabd7 f73c97c2cd75eb0921eaa0a1d06d42cb5ed7dfcd yogoloper <jguddnjs@gmail.com> 1760028817 +0900	commit: 가맹점 유저 로직 작성 - 로그인
+f73c97c2cd75eb0921eaa0a1d06d42cb5ed7dfcd 14ca8c7a5e3f162497e6a6984b801d3e6f7bca46 yogoloper <jguddnjs@gmail.com> 1760188549 +0900	commit: 가맹점 유저 정보 확인 - spring security
+14ca8c7a5e3f162497e6a6984b801d3e6f7bca46 8dd64e282e564d4048ff068294fbe308bca7a4ce yogoloper <jguddnjs@gmail.com> 1760195375 +0900	commit: 오타수정
+8dd64e282e564d4048ff068294fbe308bca7a4ce 0b5a6188d745e2198e6179c358557d2a9b472958 yogoloper <jguddnjs@gmail.com> 1760195840 +0900	commit: RabbitMQ 설정 - Producer 기본 구조 작성
+0b5a6188d745e2198e6179c358557d2a9b472958 6993288844f9c691d749c3b33d87636e7c917343 yogoloper <jguddnjs@gmail.com> 1760198726 +0900	commit: 사용자 주문 로직 수정 - 비동기 주문 처리
+6993288844f9c691d749c3b33d87636e7c917343 d1ef7f5e0df694815f5ddc690dbb99379f539318 yogoloper <jguddnjs@gmail.com> 1760200123 +0900	commit: 사용자 주문 로직 수정 - 비동기 주문 수신 처리
+d1ef7f5e0df694815f5ddc690dbb99379f539318 2fab31e6e9749c6862d98f5b0ea1d2c8e2533095 yogoloper <jguddnjs@gmail.com> 1760277226 +0900	commit: 사용자 주문 알림 푸시 로직 작성 - sse
+2fab31e6e9749c6862d98f5b0ea1d2c8e2533095 a54fb9f03f392790b2d7f98fa9c34af07972af55 yogoloper <jguddnjs@gmail.com> 1760280633 +0900	commit: 사용자 주문 알림 푸시 로직 수정 - sse connection pool
+a54fb9f03f392790b2d7f98fa9c34af07972af55 f4738bda9c1aa45c97bafa3601ec085c86e35f0b yogoloper <jguddnjs@gmail.com> 1760282127 +0900	commit: 오타수정
+f4738bda9c1aa45c97bafa3601ec085c86e35f0b a54fb9f03f392790b2d7f98fa9c34af07972af55 yogoloper <jguddnjs@gmail.com> 1760282158 +0900	reset: moving to a54fb9f03f392790b2d7f98fa9c34af07972af55
+a54fb9f03f392790b2d7f98fa9c34af07972af55 79c5d82523a511a4ffdad0d391231820c57d82fc yogoloper <jguddnjs@gmail.com> 1760282179 +0900	commit: 오타수정
+79c5d82523a511a4ffdad0d391231820c57d82fc 7a899c12e0f583f0d40294e4eaa6f614e9c840b8 yogoloper <jguddnjs@gmail.com> 1760283998 +0900	commit: 사용자 주문 알림 푸시 로직 수정 - 가맹점 유저에서 주문 정보 확인
+7a899c12e0f583f0d40294e4eaa6f614e9c840b8 168af5f80f6e0dfcb14bb47027a1def6e572b879 yogoloper <jguddnjs@gmail.com> 1760286931 +0900	commit: 사용자 주문 알림 푸시 로직 수정 - 가맹점 주문 정보 처리
+168af5f80f6e0dfcb14bb47027a1def6e572b879 09c5573d793b98f45c4e4c7aa0f3d51db9251c40 yogoloper <jguddnjs@gmail.com> 1760361534 +0900	commit: 사용자 주문 알림 푸시 로직 수정 - 메인 html 수정
+09c5573d793b98f45c4e4c7aa0f3d51db9251c40 1009d2ed154adb55b6380472c94fd755df0059c7 yogoloper <jguddnjs@gmail.com> 1760502285 +0900	commit: 코틀린 전환 설정
+1009d2ed154adb55b6380472c94fd755df0059c7 779e948d516da66bcfc95c57a2f6271408e8073a yogoloper <jguddnjs@gmail.com> 1760504373 +0900	commit: 코틀린 전환 설정 - main 변경
+779e948d516da66bcfc95c57a2f6271408e8073a 88eede3492ee3b66c79335daea3cf3ea72b80d23 yogoloper <jguddnjs@gmail.com> 1760507327 +0900	commit: 코틀린 전환 설정 - config 변경
+88eede3492ee3b66c79335daea3cf3ea72b80d23 10e1ffa952c0aa6ef06cb1d5b6a8bd6b5b3cad6b yogoloper <jguddnjs@gmail.com> 1760510428 +0900	commit: 코틀린 전환 설정 - Main 파일 패키지 경로 변경
+10e1ffa952c0aa6ef06cb1d5b6a8bd6b5b3cad6b 479ae206a09714e41e6f568e635313ed615da01f yogoloper <jguddnjs@gmail.com> 1760512983 +0900	commit: 코틀린 변환 - common ErrorCode
+479ae206a09714e41e6f568e635313ed615da01f 10e1ffa952c0aa6ef06cb1d5b6a8bd6b5b3cad6b yogoloper <jguddnjs@gmail.com> 1760579360 +0900	reset: moving to 10e1ffa952c0aa6ef06cb1d5b6a8bd6b5b3cad6b
+10e1ffa952c0aa6ef06cb1d5b6a8bd6b5b3cad6b 9b28f8465f1a11a5ee1740b3af2216762d4bfd90 yogoloper <jguddnjs@gmail.com> 1760579636 +0900	commit: 코틀린 전환 - common Error code 변경
+9b28f8465f1a11a5ee1740b3af2216762d4bfd90 1e6c3e07b4936ee9aa9d1f477f74f1a760b56683 yogoloper <jguddnjs@gmail.com> 1760584048 +0900	commit: 코틀린 전환 - 패키지명 오타 수정, api.common 전체 변경
+1e6c3e07b4936ee9aa9d1f477f74f1a760b56683 1793fdc6738436ded4c90e5230ee8345a0901641 yogoloper <jguddnjs@gmail.com> 1760590527 +0900	commit: 코틀린 전환 - DB Repository 변경
+1793fdc6738436ded4c90e5230ee8345a0901641 81dfb6090aa73ba90efa1f6404bc2b614b919a3a yogoloper <jguddnjs@gmail.com> 1760597183 +0900	commit: 코틀린 전환 - JPA 연관 관계 설정 (JAVA)
+81dfb6090aa73ba90efa1f6404bc2b614b919a3a 09964f5d1db5b6e9744cda16c445d7e4ddf2e0b0 yogoloper <jguddnjs@gmail.com> 1760629564 +0900	commit: 코틀린 전환 - 연관관계에 따른 리팩토링
+09964f5d1db5b6e9744cda16c445d7e4ddf2e0b0 d873189503d2b7b4bc1961f3f791b4814cec6c42 yogoloper <jguddnjs@gmail.com> 1760632695 +0900	commit: 코틀린 전환 - DB UserOrderEntity 변경
+d873189503d2b7b4bc1961f3f791b4814cec6c42 54de39232e94ff60cf8d9e492b5e1c6f2e285aeb yogoloper <jguddnjs@gmail.com> 1760635916 +0900	commit: 코틀린 전환 - UserOrder 비지니스 로직 변경
