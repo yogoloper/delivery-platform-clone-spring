@@ -1,7 +1,7 @@
-package com.delivery.account.domain.token.helper
+package org.delivery.account.domain.token.helper
 
-import com.delivery.account.domain.token.ifs.TokenHelperIfs
-import com.delivery.account.domain.token.model.TokenDto
+import org.delivery.account.domain.token.ifs.TokenHelperIfs
+import org.delivery.account.domain.token.model.TokenDto
 import io.jsonwebtoken.ExpiredJwtException
 import io.jsonwebtoken.Jwts
 import io.jsonwebtoken.SignatureAlgorithm

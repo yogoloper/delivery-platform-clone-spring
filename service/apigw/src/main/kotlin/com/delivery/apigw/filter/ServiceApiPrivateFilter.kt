@@ -1,6 +1,6 @@
-package com.delivery.apigw.filter
+package org.delivery.apigw.filter
 
-import com.delivery.apigw.common.Log
+import org.delivery.apigw.common.Log
 import org.springframework.cloud.gateway.filter.GatewayFilter
 import org.springframework.cloud.gateway.filter.factory.AbstractGatewayFilterFactory
 import org.springframework.stereotype.Component

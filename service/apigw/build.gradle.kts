@@ -5,7 +5,7 @@ plugins {
     id("io.spring.dependency-management")
 }
 
-group = "com.delivery"
+group = "org.delivery"
 version = "0.0.1-SNAPSHOT"
 
 java {

@@ -1,6 +1,6 @@
-package com.delivery.account.domain.token.ifs
+package org.delivery.account.domain.token.ifs
 
-import com.delivery.account.domain.token.model.TokenDto
+import org.delivery.account.domain.token.model.TokenDto
 
 interface TokenHelperIfs {
     fun issueAccessToken(data: Map<String, Any>?): TokenDto?

@@ -1,7 +1,7 @@
-package com.delivery.account.domain.token.service
+package org.delivery.account.domain.token.service
 
-import com.delivery.account.domain.token.ifs.TokenHelperIfs
-import com.delivery.account.domain.token.model.TokenDto
+import org.delivery.account.domain.token.ifs.TokenHelperIfs
+import org.delivery.account.domain.token.model.TokenDto
 import org.springframework.stereotype.Service
 
 @Service
@@ -22,7 +22,7 @@ class TokenService(
         return tokenHelperIfs.issueRefreshToken(data)
     }
 
-    fun validationToken(token: String): Long? {
+    fun validationToken(token: String?): Long? {
         requireNotNull(token)
 
         return tokenHelperIfs.validationTokenWithThrow(token)

@@ -1,4 +1,4 @@
-package com.delivery.account
+package org.delivery.account
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication

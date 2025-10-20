@@ -1,4 +1,4 @@
-package org.delivery.apigw.common
+package org.delivery.account.common
 
 import org.slf4j.Logger
 import org.slf4j.LoggerFactory

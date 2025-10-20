@@ -1,6 +1,6 @@
-package com.delivery.apigw.route
+package org.delivery.apigw.route
 
-import com.delivery.apigw.filter.ServiceApiPrivateFilter
+import org.delivery.apigw.filter.ServiceApiPrivateFilter
 import org.springframework.cloud.gateway.route.RouteLocator
 import org.springframework.cloud.gateway.route.builder.RouteLocatorBuilder
 import org.springframework.context.annotation.Bean

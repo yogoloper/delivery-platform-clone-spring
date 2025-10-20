@@ -1,4 +1,4 @@
-package com.delivery.account.domain.token.model
+package org.delivery.account.domain.token.model
 
 import java.time.LocalDateTime
 

@@ -1,4 +1,4 @@
-package com.delivery.apigw
+package org.delivery.apigw
 
 import org.springframework.boot.autoconfigure.SpringBootApplication
 import org.springframework.boot.runApplication
