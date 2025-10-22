@@ -56,7 +56,7 @@ public class LoggerFilter implements Filter {
 
         var responseBody = new String(res.getContentAsByteArray());
 
-        log.info("<<<<< uri: {}, method: {}, header: {}, body: {}", uri, method, responseHeaderValues.toString(), responseBody);
+//        log.info("<<<<< uri: {}, method: {}, header: {}, body: {}", uri, method, responseHeaderValues.toString(), responseBody);
 
         res.copyBodyToResponse(); // 위에서 response의 body를 읽었으므로 초기화 착업이 필요
     }

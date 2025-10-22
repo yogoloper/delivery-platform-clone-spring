@@ -21,7 +21,7 @@ class WebConfig(
         "/",
         "favicon.ico",
         "/error",
-        "/actuator/**"
+        "/actuator/**",
     )
 
     private val SWAGGER = listOf(
