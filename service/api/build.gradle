@@ -35,6 +35,9 @@ dependencies {
     implementation 'org.springframework.boot:spring-boot-starter-web'
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
+    // logstash
+    implementation group: 'net.logstash.logback', name: 'logstash-logback-encoder', version: '7.3'
+
     implementation project(':db')
     implementation project(':common')
 
