@@ -39,7 +39,7 @@ public class AuthorizationInterceptor implements HandlerInterceptor {
         }
 
         var userId = request.getHeader("x-user-id");
-        if (accessToken == null) {
+        if (userId == null) {
             throw new ApiException(ErrorCode.BAD_REQUEST, "x-user-id header 없음");
         }
 
