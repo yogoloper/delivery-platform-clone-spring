@@ -7,20 +7,20 @@
         </encoder>
     </appender>
 
-<!--    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">-->
-<!--        <file>${LOG_FILE}.log</file>-->
-<!--        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">-->
-<!--            &lt;!&ndash; daily rollover &ndash;&gt;-->
-<!--            <fileNamePattern>${LOG_FILE}.%d{yyyy-MM-dd_HH_mm}.gz</fileNamePattern>-->
+    <appender name="FILE" class="ch.qos.logback.core.rolling.RollingFileAppender">
+        <file>LOG_FILE.log</file>
+        <rollingPolicy class="ch.qos.logback.core.rolling.TimeBasedRollingPolicy">
+            <!-- daily rollover -->
+            <fileNamePattern>LOG_FILE.%d{yyyy-MM-dd_HH_mm}.gz</fileNamePattern>
 
-<!--            &lt;!&ndash; keep 30 days' worth of history capped at 3GB total size &ndash;&gt;-->
-<!--            <maxHistory>3</maxHistory>-->
-<!--            <totalSizeCap>3GB</totalSizeCap>-->
-<!--        </rollingPolicy>-->
-<!--        <encoder>-->
-<!--            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%class] [%method] [%line] - %msg%n</pattern>-->
-<!--        </encoder>-->
-<!--    </appender>-->
+            <!-- keep 30 days' worth of history capped at 3GB total size -->
+            <maxHistory>3</maxHistory>
+            <totalSizeCap>3GB</totalSizeCap>
+        </rollingPolicy>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} [%class] [%method] [%line] - %msg%n</pattern>
+        </encoder>
+    </appender>
 
     <appender name="STASH" class="net.logstash.logback.appender.LogstashAccessTcpSocketAppender">
         <destination>localhost:5001</destination>
@@ -50,7 +50,7 @@
 
     <root level="INFO">
         <appender-ref ref="STDOUT" />
-<!--        <appender-ref ref="FILE" />-->
+        <appender-ref ref="FILE" />
         <appender-ref ref="STASH" />
     </root>
 </configuration>

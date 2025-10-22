@@ -26,7 +26,14 @@ repositories {
     mavenCentral()
 }
 
+ext {
+    set('springBootAdminVersion', "3.5.5")
+}
+
 dependencies {
+    // spring boot admin
+    implementation 'de.codecentric:spring-boot-admin-starter-client'
+
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
 
@@ -53,6 +60,12 @@ dependencies {
 
     implementation 'com.fasterxml.jackson.module:jackson-module-kotlin'
     implementation 'org.jetbrains.kotlin:kotlin-reflect'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom("de.codecentric:spring-boot-admin-dependencies:${property("springBootAdminVersion")}")
+    }
 }
 
 kotlin {
